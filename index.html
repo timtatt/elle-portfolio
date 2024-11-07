@@ -5,6 +5,9 @@
       html {
         margin: 0;
         paddding: 0;
+        font-family: "Lacquer", sans-serif;
+        font-weight: 400;
+        font-style: normal;
       }
       #desk {
         position: relative;
@@ -92,15 +95,20 @@
         transform: rotate(12deg);
       }
       .polaroid-text {
-        font-family: "Lacquer", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         text-align: center;
         margin-top: 20px;
       }
 
       #dog:hover ~ #dog-polaroid,
-      #shark:hover ~ #shark-polaroid {
+      #shark:hover ~ #shark-polaroid,
+      #pinboard:hover ~ #pinboard-polaroid,
+      #shell:hover ~ #shell-polaroid,
+      #brushes:hover ~ #brushes-polaroid,
+      #coffee:hover ~ #coffee-note,
+      #todo:hover ~ #todo-note,
+      #airpods:hover ~ #airpods-note,
+      #receipt:hover ~ #receipt-note,
+      #cake:hover ~ #cake-polaroid {
         z-index: 100;
         opacity: 1;
         transform: scale(1) rotate(10deg);
@@ -154,6 +162,28 @@
         animation-name: ipad-color;
         animation-duration: 0.4s;
         opacity: 1;
+      }
+
+      .sticky-note {
+        background-color: transparent;
+        background-image: url(assets/vectors/sticky-note.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        z-index: -1;
+        opacity: 0;
+        padding: 4% 3%;
+        width: 15%;
+        min-height: 26%;
+        transition: transform 0.1s;
+        position: absolute;
+        font-size: 18px;
+        left: 42%;
+        top: 24%;
+        transition:
+          transform 0.1s,
+          opacity 0.1s;
+        min-height: 26%;
+        transform: scale(1.1) rotate(8deg);
       }
 
       @keyframes pen-hover {
@@ -238,7 +268,7 @@
 
   <body>
     <div id="desk">
-      <img src="assets/desk.jpg" />
+      <img src="assets/bg.jpg" />
 
       <div
         id="shark"
@@ -349,9 +379,49 @@
       <div id="dog-polaroid" class="polaroid">
         <div
           class="polaroid-img"
-          style="background-image: url(assets/photos/shark.jpg)"
+          style="background-image: url(assets/photos/boston.jpg)"
         ></div>
-        <div class="polaroid-text">my polaroid</div>
+        <div class="polaroid-text">this is Boston</div>
+      </div>
+      <div id="pinboard-polaroid" class="polaroid">
+        <div
+          class="polaroid-img"
+          style="background-image: url(assets/photos/footy.jpg)"
+        ></div>
+        <div class="polaroid-text">don’t ask me why I go for freo</div>
+      </div>
+      <div id="brushes-polaroid" class="polaroid">
+        <div
+          class="polaroid-img"
+          style="background-image: url(assets/photos/project.jpg)"
+        ></div>
+        <div class="polaroid-text">my unfinished lockdown project</div>
+      </div>
+      <div id="cake-polaroid" class="polaroid">
+        <div
+          class="polaroid-img"
+          style="background-image: url(assets/photos/baking.jpg)"
+        ></div>
+        <div class="polaroid-text">i like baking</div>
+      </div>
+      <div id="shell-polaroid" class="polaroid">
+        <div
+          class="polaroid-img"
+          style="background-image: url(assets/photos/beach.jpg)"
+        ></div>
+        <div class="polaroid-text">
+          i’m actually a geelong girly, so the beach is my favourite place!
+        </div>
+      </div>
+      <div id="coffee-note" class="sticky-note">soy latte</div>
+      <div id="airpods-note" class="sticky-note">
+        top 1% Taylor Swift listener of 2023
+      </div>
+      <div id="todo-note" class="sticky-note">
+        this is to remind me every time I edit this site
+      </div>
+      <div id="receipt-note" class="sticky-note">
+        tattersall is my last name, get it?
       </div>
     </div>
   </body>
