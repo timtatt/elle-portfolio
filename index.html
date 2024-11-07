@@ -15,25 +15,27 @@
       }
       .item {
         cursor: pointer;
-        transition: transform 0.1s;
         position: absolute;
         z-index: 1;
       }
 
-      .item:hover {
+      .item-rotate {
+        transition: transform 0.1s;
+      }
+
+      .item-rotate:hover {
         transform: scale(1.05) rotate(2deg);
       }
 
       .item:hover .bw {
         opacity: 0;
-        width: 100%;
       }
 
       .item:hover .color {
         opacity: 1;
       }
 
-      .item .color {
+      .color {
         opacity: 0;
         position: absolute;
         top: 0;
@@ -110,6 +112,108 @@
         animation-timing-function: ease-in-out;
       }
 
+      #ipad-pen {
+        position: absolute;
+        width: 21%;
+        height: 48%;
+        top: 52%;
+        left: -1%;
+      }
+
+      #pen, #ipad {
+        position: absolute;
+        cursor: pointer;
+      }
+
+      #pen {
+        z-index: 2;
+      }
+
+      #ipad-pen:hover #pen {
+        animation-name:pen-hover;
+        animation-duration: 0.4s;
+      }
+
+      #ipad-pen:hover #pen {
+        transform: rotate(-150deg) translate(50%, 20%);
+      }
+
+      #ipad-pen #pen {
+        animation-name: pen-put-down;
+        animation-duration: 0.3s;
+      }
+
+      #ipad-pen:hover #ipad .bw {
+        animation-name: ipad-bw;
+        animation-duration: 0.4s;
+        opacity: 0;
+      }
+
+      #ipad-pen:hover #ipad .color {
+        animation-name: ipad-color;
+        animation-duration: 0.4s;
+        opacity: 1;
+      }
+
+
+      @keyframes pen-hover {
+        0% {
+          transform: rotate(0);
+        }
+        70% {
+          transform: rotate(-150deg) translate(50%, 20%);
+        }
+        80% {
+          transform: rotate(-150deg) translate(50%, 20%);
+        }
+
+        90% {
+          transform: rotate(-150deg) translate(50%, 23%);
+        }
+
+        100% {
+          transform: rotate(-150deg) translate(50%, 20%);
+        }
+      }
+
+      @keyframes pen-put-down {
+        0% {
+          transform: rotate(-150deg) translate(50%, 20%);
+        }
+
+        100% {
+          transform: rotate(0) translate(0, 0);
+        }
+
+      }
+
+      @keyframes ipad-bw {
+      0% {
+        opacity: 1;
+      }
+      89% {
+        opacity: 1;
+      }
+        90% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes ipad-color {
+      0% {
+        opacity: 0;
+      }
+      89% {
+        opacity: 0;
+      }
+        90% {
+          opacity: 1;
+        }
+      }
+
+
+      }
+
       @keyframes vibrate {
         0% {
           transform: rotate(0deg);
@@ -129,7 +233,7 @@
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" .href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lacquer&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
@@ -140,49 +244,103 @@
     <div id="desk">
       <img src="assets/desk.jpg" />
 
-      <div id="shark" class="item" style="width: 19%; top: 0; left: 39.5%">
+      <div
+        id="shark"
+        class="item item-rotate"
+        style="width: 19%; top: 0; left: 39.5%"
+      >
         <img class="bw" src="assets/vectors/shark.svg" />
         <img class="color" src="assets/vectors/shark-color.svg" />
       </div>
-      <div id="dog" class="item" style="width: 15%; top: 3%; left: 25%">
+      <div
+        id="dog"
+        class="item item-rotate"
+        style="width: 15%; top: 3%; left: 25%"
+      >
         <img class="bw" src="assets/vectors/dog.svg" />
         <img class="color" src="assets/vectors/dog-color.svg" />
       </div>
-      <div id="cake" class="item" style="width: 27%; top: 47%; left: 69%">
+      <div
+        id="cake"
+        class="item item-rotate"
+        style="width: 27%; top: 47%; left: 69%"
+      >
         <img class="bw" src="assets/vectors/cake.svg" />
         <img class="color" src="assets/vectors/cake-color.svg" />
       </div>
-      <div id="brushes" class="item" style="width: 28%; top: 7%; left: 64%">
+      <div
+        id="brushes"
+        class="item item-rotate"
+        style="width: 28%; top: 7%; left: 64%"
+      >
         <img class="bw" src="assets/vectors/brushes.svg" />
         <img class="color" src="assets/vectors/brushes-color.svg" />
       </div>
-      <div id="airpods" class="item" style="width: 15%; top: 43%; left: 21%">
+      <div
+        id="airpods"
+        class="item item-rotate"
+        style="width: 15%; top: 43%; left: 21%"
+      >
         <img class="bw" src="assets/vectors/airpods.svg" />
         <img class="color" src="assets/vectors/airpods-color.svg" />
       </div>
-      <div id="pinboard" class="item" style="width: 25%; top: 8%; left: -2%">
+      <div
+        id="pinboard"
+        class="item item-rotate"
+        style="width: 25%; top: 8%; left: -2%"
+      >
         <img class="bw" src="assets/vectors/pinboard.svg" />
         <img class="color" src="assets/vectors/pinboard-color.svg" />
       </div>
-      <div id="coffee" class="item" style="width: 15%; top: 34%; left: 5%">
+      <div
+        id="coffee"
+        class="item item-rotate"
+        style="width: 15%; top: 34%; left: 5%"
+      >
         <img class="bw" src="assets/vectors/coffee.svg" />
         <img class="color" src="assets/vectors/coffee-color.svg" />
       </div>
-      <div id="receipt" class="item" style="width: 30%; top: 56%; left: 46%">
+      <div
+        id="receipt"
+        class="item item-rotate"
+        style="width: 30%; top: 56%; left: 44%"
+      >
         <img class="bw" src="assets/vectors/receipt.svg" />
         <img class="color" src="assets/vectors/receipt-color.svg" />
       </div>
-      <div id="shell" class="item" style="width: 19%; top: 27%; left: 19%">
+      <div
+        id="shell"
+        class="item item-rotate"
+        style="width: 19%; top: 27%; left: 19%"
+      >
         <img class="bw" src="assets/vectors/shell.svg" />
         <img class="color" src="assets/vectors/shell-color.svg" />
       </div>
-      <div id="phone" class="item" style="width: 17%; top: 76%; left: 24.5%">
+      <div
+        id="phone"
+        class="item item-rotate"
+        style="width: 17%; top: 76%; left: 24.5%"
+      >
         <img class="bw" src="assets/vectors/phone.svg" />
         <img class="color" src="assets/vectors/phone-color.svg" />
       </div>
-      <div id="todo" class="item" style="width: 10%; top: 7%; left: 59%">
+      <div
+        id="todo"
+        class="item item-rotate"
+        style="width: 10%; top: 7%; left: 59%"
+      >
         <img class="bw" src="assets/vectors/todo.svg" />
         <img class="color" src="assets/vectors/todo-color.svg" />
+      </div>
+      <div id="ipad-pen">
+        <div id="ipad" style="width: 100%; top: 0; left: 0">
+          <img class="bw" src="assets/vectors/ipad.svg" />
+          <img class="color" src="assets/vectors/ipad-color.svg" />
+        </div>
+        <div id="pen" style="width: 42%; top: 23%; left: 60%">
+          <img class="bw" src="assets/vectors/pen.svg" />
+          <img class="color" src="assets/vectors/pen-color.svg" />
+        </div>
       </div>
 
       <div id="shark-polaroid" class="polaroid">
