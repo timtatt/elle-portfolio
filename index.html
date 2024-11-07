@@ -103,6 +103,30 @@
         opacity: 1;
         transform: scale(1) rotate(10deg);
       }
+
+      #phone:hover {
+        animation-name: vibrate;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes vibrate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        33% {
+          transform: rotate(5deg);
+        }
+
+        66% {
+          transform: scale(1.02) rotate(-5deg);
+        }
+
+        100% {
+          transform: scale(1.05) rotate(2deg);
+        }
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
