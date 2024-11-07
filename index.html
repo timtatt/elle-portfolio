@@ -120,7 +120,8 @@
         left: -1%;
       }
 
-      #pen, #ipad {
+      #pen,
+      #ipad {
         position: absolute;
         cursor: pointer;
       }
@@ -130,7 +131,7 @@
       }
 
       #ipad-pen:hover #pen {
-        animation-name:pen-hover;
+        animation-name: pen-hover;
         animation-duration: 0.4s;
       }
 
@@ -154,7 +155,6 @@
         animation-duration: 0.4s;
         opacity: 1;
       }
-
 
       @keyframes pen-hover {
         0% {
@@ -184,34 +184,30 @@
         100% {
           transform: rotate(0) translate(0, 0);
         }
-
       }
 
       @keyframes ipad-bw {
-      0% {
-        opacity: 1;
-      }
-      89% {
-        opacity: 1;
-      }
+        0% {
+          opacity: 1;
+        }
+        89% {
+          opacity: 1;
+        }
         90% {
           opacity: 0;
         }
       }
 
       @keyframes ipad-color {
-      0% {
-        opacity: 0;
-      }
-      89% {
-        opacity: 0;
-      }
+        0% {
+          opacity: 0;
+        }
+        89% {
+          opacity: 0;
+        }
         90% {
           opacity: 1;
         }
-      }
-
-
       }
 
       @keyframes vibrate {
